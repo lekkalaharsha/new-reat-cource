@@ -5,8 +5,14 @@ import CardContact from "./ContactCard";
         props.getContactId (id);
 
     };
-    
-    const renderContactList = props.contacts.map((contact)=>{
+    const contacts =[{
+        id:"1",
+        name : "harsha",
+        email: 'harsha@gmail.com',
+    }
+];
+console.log(contacts)
+    const renderContactList = contacts.map((contact)=>{
         return (
             <CardContact contact={contact} clickHander= {deleteContactHandler} key ={contact.id}></CardContact>
         );

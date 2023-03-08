@@ -1,10 +1,12 @@
 import React,{useState,useEffect} from 'react';
+import { BrowserRouter as Router,  Switch,Route } from 'react-router-dom';
+
 import './App.css';
 import { v4 as uuidv4 } from 'uuid';
 import Header from './Header';
 import AddContact from './AddContact';
 import ContactList from './ContactList';
-import { BrowserRouter as Router,Route,Swtich  } from 'react-router-dom';
+
 
 
 
@@ -42,13 +44,21 @@ function App() {
   },[contacts]);
   return (
     <div className='ui container'>
-      <Header/>
-      <AddContact addContactHandler = {addContactHandler}/>
-      <h2>contact list</h2>
-      <ContactList contacts={contacts} getContactId ={removeContactHandler}/>
-    
 
-    </div>
+      <Router>
+        <Header/>
+        
+        
+        
+        <Route path="/" component={AddContact} />
+        <Route path='/add' component={ContactList} />
+        
+        
+        
+        
+        
+      </Router>
+      </div>
   );
 }
 
