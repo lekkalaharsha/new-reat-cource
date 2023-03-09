@@ -25,10 +25,10 @@ function App() {
     setContacts(newContactList);
   };
 
-  // useEffect(() => {
-  //   const retriveContacts = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
-  //   if (retriveContacts) setContacts(retriveContacts);
-  // }, []);
+  useEffect(() => {
+    const retriveContacts = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+    if (retriveContacts) setContacts(retriveContacts);
+  }, []);
 
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contacts));
